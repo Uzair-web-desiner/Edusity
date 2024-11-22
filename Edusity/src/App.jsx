@@ -60,7 +60,11 @@ function App() {
             <div className="explore-logo"></div>
             <p>Explore GPT</p>
           </div>
-          <div className="upgrade hover">Upgrade Plan</div>
+          <div className="upgrade hover">
+            <p>Upgrade Plan</p>
+            <div className="upgrade-logo"></div>
+            
+          </div>
           <div className="history">
             <p>Histroy</p>
             <div className="his-main">

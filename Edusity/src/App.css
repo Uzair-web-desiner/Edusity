@@ -180,6 +180,16 @@ form input{
     padding: 10px;
     border-radius: 20px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.upgrade-logo{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url(upgrade.png);
+    background-size: cover;
 }
 .his-main {
     height: 380px;

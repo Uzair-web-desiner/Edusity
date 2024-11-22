@@ -31,19 +31,18 @@ function App() {
     let finalhistory=[question,...history]
     sethistory(finalhistory)
     event.preventDefault()
+
   }
   const genAnswer2 = async ()=>{
-    setanswer()
-    setfinalQuestion(finalhistory)
+    setanswer();
+    setfinalQuestion(finalhistory);
     const prompt = finalhistory;
     const result = await model.generateContent(prompt);                   
     setanswer(result.response.candidates[0].content.parts[0].text.replace(/\*/g, ""))
   } 
   if(count==true){
     genAnswer2()
-    console.log(finalhistory)
     setcount(false)
-    
   }
   
 

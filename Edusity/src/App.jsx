@@ -1,7 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
-import axios from 'axios';
 import { useState } from "react";
 
 function App() {
@@ -25,13 +26,14 @@ function App() {
   }  
 
   let getData=(event)=>{
+    toast.info('Wait a few minutes')
     setanswer()
     genAnswer()
     setfinalQuestion(question)
     let finalhistory=[question,...history]
     sethistory(finalhistory)
     event.preventDefault()
-
+    setquestion('')
   }
   const genAnswer2 = async ()=>{
     setanswer();
@@ -41,6 +43,7 @@ function App() {
     setanswer(result.response.candidates[0].content.parts[0].text.replace(/\*/g, ""))
   } 
   if(count==true){
+    toast.info('Wait a few minutes')
     genAnswer2()
     setcount(false)
   }
@@ -107,7 +110,7 @@ function App() {
         </div>
 
       </div>
-
+      <ToastContainer/>
     </>
   )
 }
